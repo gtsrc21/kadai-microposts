@@ -15,7 +15,6 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :likes, through: :favorites, source: :like
   has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'like_id'
-  # has_many :likeds, through: :reverses_of_favorite, source: :micropost
  
   def follow(other_user)
     unless self == other_user
